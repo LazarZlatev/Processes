@@ -1,12 +1,12 @@
 ﻿using Processes.Application;
 
 
-class ProcessMonitor
+public class ProcessMonitor
 {
     static string? processName;
     static int maxLifetimeSeconds;
     static int monitorFrequencySeconds;
-    static void Main(string[] args)
+    public static void Main(string[] args)
     {
         Console.WriteLine("Enter Process name: "); // e.g. : wordpad, notepad
         processName = Console.ReadLine();
@@ -23,7 +23,7 @@ class ProcessMonitor
         {
             while (true)
             {
-                Programm.KillProcessesIfExceedLifetime(processName, maxLifetimeSeconds);
+                Programm.KillProcessesExceedingLifeTime(processName, maxLifetimeSeconds);
                 Thread.Sleep(monitorFrequencySeconds * 1000);
 
                 if (Console.KeyAvailable)

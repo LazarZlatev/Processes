@@ -2,9 +2,9 @@
 
 namespace Processes.Application
 {
-    internal class Programm
+    public class Programm
     {
-        public static void KillProcessesIfExceedLifetime(string processName, int maxLifetimeMinutes)
+        public static void KillProcessesExceedingLifeTime(string processName, int maxLifetimeMinutes)
         {
             Process[] processes = Process.GetProcessesByName(processName);
 
